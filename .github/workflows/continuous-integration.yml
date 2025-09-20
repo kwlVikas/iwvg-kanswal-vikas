@@ -50,7 +50,8 @@ jobs:
         uses: github/codeql-action/analyze@v3
         with:
           category: "/language:java"
-
+      - name: Lowercase repository name
+        run: echo "REPOSITORY=$(echo '${{ github.repository }}' | tr '[:upper:]' '[:lower:]')" >> $GITHUB_ENV
       - name: 📊 Sonar Analysis
         run: >
           mvn -B sonar:sonar
