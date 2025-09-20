@@ -54,8 +54,8 @@ jobs:
       - name: 📊 Sonar Analysis
         run: >
           mvn -B sonar:sonar
-          -Dsonar.projectKey=iwvg-kanswal-vikas_${{ env.ARTIFACT }}
-          -Dsonar.organization=iwvg-kanswal-vikas
+          -Dsonar.projectKey=kwlVikas_${{ env.ARTIFACT }}
+          -Dsonar.organization=kwlVikas
           -Dsonar.host.url=https://sonarcloud.io
           -Dsonar.token=${{ secrets.SONAR_TOKEN }}
         env:
