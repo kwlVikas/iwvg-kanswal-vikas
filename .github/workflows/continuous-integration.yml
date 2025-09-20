@@ -50,13 +50,12 @@ jobs:
         uses: github/codeql-action/analyze@v3
         with:
           category: "/language:java"
-      - name: Lowercase repository name
-        run: echo "REPOSITORY=$(echo '${{ github.repository }}' | tr '[:upper:]' '[:lower:]')" >> $GITHUB_ENV
+
       - name: 📊 Sonar Analysis
         run: >
           mvn -B sonar:sonar
           -Dsonar.projectKey=kwlVikas_${{ env.ARTIFACT }}
-          -Dsonar.organization=kwlVikas
+          -Dsonar.organization=kwlvikas
           -Dsonar.host.url=https://sonarcloud.io
           -Dsonar.token=${{ secrets.SONAR_TOKEN }}
         env:
